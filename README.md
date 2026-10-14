@@ -1,2 +1,2 @@
 # fake-linux-shell
-A dumbed down version of the linux comand line
+A silly little project that fakes being a terminal
