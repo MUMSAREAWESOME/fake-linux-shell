@@ -1,5 +1,5 @@
 #include "log.h"
-#include "comandRunners.h"
+#include "commandRunners.h"
 #include "logo.h"
 #include <cctype>
 #include <iostream>
@@ -21,15 +21,15 @@ int main(){
   while (true){
     printHeader(60, '=');
     std::cout << "=> ";
-    std::string comand;
-    std::cin >> comand;
-    transform(comand.begin(), comand.end(), comand.begin(), ::tolower);
+    std::string command;
+    std::cin >> command;
+    transform(command.begin(), command.end(), command.begin(), ::tolower);
 
-    if (comand == "quit" || comand == "q"){
+    if (command == "quit" || command == "q"){
       addToLog("log/log.txt", "Exited");
       break;
     }
-    else if (comand == "launch"){
+    else if (command == "launch"){
       bool chmod;
       std::string choice, path, name;
 
@@ -49,18 +49,18 @@ int main(){
 
       std::cout << std::endl;
     }
-    else if (comand == "clear"){
+    else if (command == "clear"){
       clear();
       showLogo();
     }
-    else if (comand == "run" || comand == "command"){
+    else if (command == "run" || command == "command"){
       std::cin.ignore();
-      std::string comandToRun;
+      std::string commandToRun;
       std::cout << "Command: ";
-      getline(std::cin, comandToRun);
-      runComand(comandToRun);
+      getline(std::cin, commandToRun);
+      runcommand(commandToRun);
     }
-    else if (comand == "help"){
+    else if (command == "help"){
       help();
     }
   }

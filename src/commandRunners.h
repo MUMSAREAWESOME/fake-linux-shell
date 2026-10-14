@@ -3,4 +3,4 @@
 
 void launchExecutable(bool chmodNeeded, std::string pathToExecutable, std::string executableName);
 void clear();
-void runComand(std::string comand);
+void runcommand(std::string command);

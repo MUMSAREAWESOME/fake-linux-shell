@@ -1,4 +1,4 @@
-#include "comandRunners.h"
+#include "commandRunners.h"
 #include "log.h"
 #include <cstdlib>
 #include <string>
@@ -6,7 +6,7 @@
 #include <algorithm>
 
 void launchExecutable(bool chmodNeeded, std::string pathToExecutable, std::string executableName){
-  std::string comand;
+  std::string command;
 
   if (chmodNeeded){
     std::string temp = "chmod +x ";
@@ -14,13 +14,13 @@ void launchExecutable(bool chmodNeeded, std::string pathToExecutable, std::strin
     std::system(temp.c_str());
   }
 
-  comand += pathToExecutable;
+  command += pathToExecutable;
 
   bool goAhead = false;
 
   for (int i = 0; i < 4; i ++){
     std::string cont;
-    std::cout << "Comand about to execute: " << comand << '\n' << "Would you like to continue? [y/N]" << '\n' << "=> ";
+    std::cout << "command about to execute: " << command << '\n' << "Would you like to continue? [y/N]" << '\n' << "=> ";
     std::cin >> cont;
     transform(cont.begin(), cont.end(), cont.begin(), ::tolower);
     
@@ -37,8 +37,8 @@ void launchExecutable(bool chmodNeeded, std::string pathToExecutable, std::strin
   
   if (goAhead){
     std::string logMsg = "Executed: ";
-    logMsg += comand;
-    std::system(comand.c_str());
+    logMsg += command;
+    std::system(command.c_str());
     addToLog("log/log.txt", logMsg);
   }
   else addToLog("log/log.txt", "Did not execute");
@@ -49,9 +49,9 @@ void clear(){
   addToLog("log/log.txt", "Cleared Screen");
 }
 
-void runComand(std::string comand){
-  std::string logText = comand;
-  std::system(comand.c_str());
+void runcommand(std::string command){
+  std::string logText = command;
+  std::system(command.c_str());
   addToLog("log/log.txt",logText);
   std::cout << '\n';
 }
