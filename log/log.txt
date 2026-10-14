@@ -1,0 +1,5 @@
+Cleared Screen
+Exited
+Exited
+Executed: ~/scripts/main
+Exited
