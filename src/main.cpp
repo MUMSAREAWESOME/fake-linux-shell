@@ -13,7 +13,7 @@ void printHeader(int length, char character){
 }
 
 void help(){
-  std::cout << "Current valic commands: " << "quit, q, launch, clear, run, command, help" << std::endl;
+  std::cout << "Current valid commands: " << "quit, q, launch, clear, run, command, help" << std::endl;
 }
 
 int main(){
