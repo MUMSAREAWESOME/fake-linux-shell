@@ -9,7 +9,7 @@ void launchExecutable(bool chmodNeeded, std::string pathToExecutable, std::strin
   std::string command;
 
   if (chmodNeeded){
-    std::string temp = "chmod +x ";
+    std::string temp = "chmod +x ./";
     temp += pathToExecutable;
     std::system(temp.c_str());
   }
